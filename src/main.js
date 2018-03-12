@@ -4,8 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.config.productionTip = false
+import '@/assets/css/app.css'
 
+import utils from './lib/utils.js'
+
+Vue.use(utils)
+
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
