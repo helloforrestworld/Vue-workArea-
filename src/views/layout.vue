@@ -38,8 +38,15 @@
       next()
     },
     components: {
-      headerNav: Header
-    }
+      headerNav: Header}
+    //异步组件 
+    //   (resolve)=>{
+    //     setTimeout(function(){
+    //       // resolve(Header)
+    //       resolve(require('@/components/header'))
+    //     },1000)
+    //   }
+    // }
   }
 </script>
 <style>

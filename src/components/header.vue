@@ -2,7 +2,7 @@
   <div class="clearFix el-menu--dark">
     <ul class="el-menu menu-horizontal el-menu--dark el-menu--horizontal header-nav" >
       <router-link to="/" class="el-menu-item logo" exact tag="li">
-      <img src="../assets/miaov.png">
+      <img src="../assets/forrest.png">
     </router-link>
       <router-link to="/project" class="el-menu-item" tag="li" >
         <i class="fa fa-home"></i>

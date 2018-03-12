@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="home-header">
-      <img src="../assets/miaov.png" alt="">
+      <img src="../assets/forrest.png" alt="">
       <div class="portrait">
         <router-link v-if="!isLogin"  to="/login" tag="span">登录</router-link>
         <img v-if="isLogin" src="../assets/portrait.png" alt="">

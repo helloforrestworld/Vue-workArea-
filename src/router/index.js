@@ -1,12 +1,45 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/components/home'
-import layout from '@/views/layout'
 import login from '@/components/login'
 
-import project from '@/views/backend/project'
-import doc from '@/views/backend/doc'
-import workbench from '@/views/backend/workbench'
+// import layout from '@/views/layout'
+// import project from '@/views/backend/project'
+// import doc from '@/views/backend/doc'
+// import workbench from '@/views/backend/workbench'
+
+
+// 利用webpack代码分割功能实现 懒加载
+let layout = (resolve)=>{
+  return require.ensure([],function(){
+    resolve(require('@/views/layout'))
+  })
+}
+
+// let project = (resolve)=>{
+//   return require.ensure([],function(){
+//     resolve(require('@/views/backend/project'))
+//   })
+// }
+
+// 也可以用import函数
+let project = (resolve)=>{
+  return import('@/views/backend/project')
+}
+
+// 分割为同一个
+let doc = (resolve)=>{
+  return require.ensure([],function(){
+    resolve(require('@/views/backend/doc'))
+  },'doc&workbench')
+}
+let workbench = (resolve)=>{
+  return require.ensure([],function(){
+    resolve(require('@/views/backend/workbench'))
+  },'doc&workbench')
+}
+
+
 
 Vue.use(Router)
 let router = new Router({
